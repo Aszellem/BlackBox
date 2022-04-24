@@ -1,0 +1,181 @@
+* {
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: 1rem;
+    margin: auto;
+    padding: 5%;
+    background-color: #212529;
+}
+
+.gombok {
+    justify-content: center;
+    display: flex;
+    padding: 50px;
+    flex-direction: column;
+    float: left;
+    text-align: center;
+    background-color: transparent;
+}
+
+#rendKeszSzoveg {
+    color: white;
+}
+
+#kovEloadoButton {
+    width: 300px !important;
+}
+
+.helyszinLista,
+.eloadoLista {
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+form.flex input[type="text"] {
+    color: #38b6ff;
+    border: 1px solid #38b6ff;
+    width: 100%;
+    background: transparent;
+}
+
+input[type="textarea"] {
+    width: 100%;
+    height: 100px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+    border-radius: 4em;
+    border-color: #38b6ff;
+}
+
+label {
+    color: white;
+}
+
+footer {
+    position: relative;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    height: 60px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 60px;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    color: #38b6ff;
+}
+
+label {
+    margin-top: 15px;
+}
+
+.form-control {
+    background-color: transparent;
+    color: #38b6ff;
+    height: 45px;
+    border-width: 0px;
+    border-radius: 10px;
+    box-shadow: 0px 7px 29px 0px rgba(255, 255, 255, 0.5);
+}
+
+
+/**BUTTONS*/
+
+.btn_utolso {
+    width: 150px;
+    height: 50px;
+    text-align: center;
+    background-color: #38b6ff;
+    border: 0;
+    border-radius: 10px;
+}
+
+.btn_utolso:hover {
+    background-color: white;
+    color: #212529;
+    border: 0;
+    border-radius: 10px;
+}
+
+.btn {
+    margin-right: 10px;
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    background-color: #38b6ff;
+    border: 0;
+    border-radius: 10px;
+}
+
+.btn:hover {
+    background-color: #212529;
+    border: 0;
+    border-radius: 10px;
+}
+
+.btn_uj_helyszin,
+.btn_uj_eloado {
+    margin-left: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 50px;
+    background-color: #38b6ff;
+    border: 0;
+    border-radius: 10px;
+}
+
+.btn_uj_helyszin:hover,
+.btn_uj_eloado:hover {
+    background-color: #212529;
+    color: white;
+    border: 0;
+    border-radius: 10px;
+}
+
+.btn_uj_helyszin {
+    margin-right: 50px;
+}
+
+form.form-control input[type=text] {
+    color: #38B6FF;
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid white;
+    float: left;
+    width: 80%;
+    background: transparent;
+}
+
+form.form-control input[type=text]::after {
+    color: #38B6FF;
+    background: transparent;
+}
+
+footer {
+    position: relative;
+    background-color: transparent;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+    height: 20px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 25px;
+}
