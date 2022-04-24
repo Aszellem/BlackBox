@@ -37,7 +37,7 @@
                     <li class="nav-item">
                         <a class="nav-link" id="datumRendez" aria-current="page" onclick="kezdolap()">Rendezés dátum szerint</a>
                     </li>
-                    <li class="nav-item dropdown" data-display="static" id="dropdownMenu">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-bars"></i> Log In
                         </a>
@@ -45,7 +45,7 @@
                             <li>
                                 <form class="container my-3" id="bejelentkezes" action="localhost:3000/admin" method="post">
                                     <label>Adminisztrátor jelszó:
-                                        <input type="password" name="password" id="password">
+                                        <input class="password_input" type="password" name="password" id="password">
                                     </label>
                                     <button class="button btn-outline-primary my-3" type="button" id="login">Bejelentkezés</button>
                                     <p id="uzenet2" class="text-danger">&nbsp;</p>
@@ -54,6 +54,10 @@
                         </ul>
                     </li>
                 </ul>
+
+
+                
+
                 
                 <form class="d-flex" id="keresoNav">
                     <input class="form-control" type="text" name="kereso" id="kereso" placeholder="Keresés" />
