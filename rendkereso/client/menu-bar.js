@@ -290,7 +290,6 @@ function helyszinSzur() {
         .catch(err => console.log(err));
 }
 
-let rendDarab;
 
 function rendezvenyBetolt() {
     const url = 'http://localhost:3000/rendezvenyek';
@@ -298,7 +297,6 @@ function rendezvenyBetolt() {
     fetch(url)
         .then((response) => response.json())
         .then(json => {
-            rendDarab = json.length;
             rendezvenyek.innerHTML = "";
             json.forEach(r => {
                 id = r.rend_id;
@@ -307,7 +305,6 @@ function rendezvenyBetolt() {
             })
         })
         .catch(err => console.log(err));
-    return rendDarab;
 }
 
 function rendezvenySzur() {
@@ -334,7 +331,6 @@ function rendezvenySzur() {
         })
         .catch(err => console.log(err));
 }
-
 
 bejelentkezve();
 helyszinBetolt();
