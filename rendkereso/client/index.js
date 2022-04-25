@@ -27,12 +27,6 @@ document.getElementById("login").onclick = function() {
         .catch(err => console.log(err));
 }
 
-//Kijelentkezes
-function kijelentkezes() {
-    delete sessionStorage.token
-    document.location = "index.html"
-}
-
 function kezdolap() {
     const url = 'http://localhost:3000/kezdolap/';
     const lista = document.getElementById("rendezvenyek");
@@ -108,14 +102,4 @@ function nevSzerint() {
         .catch(err => console.log(err));
 }
 
-
-//kéne valami ami alapból kitörli ami a getDay().now-nál kisebb
-//és akkor meg van oldva a törlés
-
-function eloadoTorol() {
-    const url = 'http://localhost:3000/kezdolap';
-}
-
-
-//kezdolap();
 //console.log("sikeresen elindult 🟢");
