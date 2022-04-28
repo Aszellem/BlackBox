@@ -42,27 +42,53 @@
         <h2>Rendezvény adatai</h2>
         <div class="row">
             <div class="col-md-12">
-                <form method="POST" onsubmit="submitRendezveny()" action="./uj_esemeny.html">
+                <form method="POST" onsubmit="submitRendezveny()" action="./uj_rendezveny.html">
                     <label>Helyszín:</label>
                     <input type="text" class="form-control" id="helyszinSzuro" placeholder="Gépelj a szűréshez, majd válassz!" oninput="helyszinSzur()">
                     <div style="overflow: auto; height: 150px" id="helyszinLista">
                         <!-- helyszínek listája -->
                     </div>
                     <label>Rendezvény neve:</label>
-                    <input type="text" class="form-control" id="rendezveny" placeholder="pl. EFOTT">
+                    <input type="text" class="form-control" id="rendezveny" placeholder="pl. EFOTT" required>
                     <label>Dátum:</label>
                     <input type="date" class="form-control" id="datum">
                     <label>Rendezvény kategóriája:</label>
-                    <input type="text" class="form-control" id="kategoria" placeholder="pl. Fesztivál">
+                    <input type="text" class="form-control" id="kategoria" placeholder="pl. Fesztivál" required>
                     <label>Korosztály:</label>
-                    <input type="text" class="form-control" id="korosztaly" placeholder="pl. Családi">
+                    <input type="text" class="form-control" id="korosztaly" placeholder="pl. Családi" required>
                     <label>Leírás:</label>
-                    <input type="textarea" class="form-control" id="es_leiras" placeholder="pl. A legjobb nyári fesztivál">
+                    <input type="textarea" class="form-control" id="es_leiras" placeholder="pl. A legjobb nyári fesztivál" required>
                     <label>Belépő:</label>
-                    <input type="number" class="form-control" id="ar">
+                    <input type="number" class="form-control" id="ar" required>
                     <br>
                     <button class="btn btn-primary mt-3" type="submit">ELKÜLD</button>
                 </form>
+                <div class="gombok">
+                    <button class="btn btn-primary mt-3" type="submit" id="tovabb">Tovabb</button>
+                    <script>
+                        document.getElementById("tovabb").onclick = function() {
+                            location.href = "./uj_esemeny.html";
+                        };
+                    </script>
+                    <button id="ujHelyszinLink" class="btn_uj_eloado btn-primary mt-3">Új helyszín</button>
+                    <script>
+                        document.getElementById("ujHelyszinLink").onclick = function() {
+                            location.href = "./uj_helyszin.html";
+                        };
+                    </script>
+                    <button id="ujEloadoLink" class="btn_uj_eloado btn-primary mt-3">Új előadó</button>
+                    <script>
+                        document.getElementById("ujEloadoLink").onclick = function() {
+                            location.href = "./uj_eloado.html";
+                        };
+                    </script>
+                    <button id="ujEsemenyLink" class="btn_uj_eloado btn-primary mt-3">Új esemény</button>
+                    <script>
+                        document.getElementById("ujEsemenyLink").onclick = function() {
+                            location.href = "./uj_esemeny.html";
+                        };
+                    </script>
+                </div>
             </div>
         </div>
     </div>

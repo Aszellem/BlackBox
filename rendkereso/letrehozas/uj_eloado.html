@@ -40,13 +40,6 @@
         <div class="container">
             <h1>Esemény létrehozása</h1>
             <h2>Fellépők adatai</h2>
-            <div class="gombok">
-                <form method="POST" onsubmit="submitEloado()" action="./uj_eloado.html">
-                    <button id="ujEloadoLink" class="btn_uj_eloado btn-primary mt-3">KÖVETKEZŐ ELŐADÓ HOZZÁADÁSA</button>
-                </form>
-                <br><br>
-                <h4 style="color: white">Kérlek ne hagyd üresen a mezőket!</h4>
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     <form method="POST" onsubmit="submitEloado()" action="./uj_rendezveny.html">
@@ -55,8 +48,33 @@
                         <label>BIO:</label>
                         <input type="textarea" class="form-control" name="bio" id="bio" placeholder="Magyarország egyik leghíresebb rock együttese" required>
                         <br>
-                        <button class="btn btn-primary mt-3" type="submit">ELKÜLD</button>
+                        <button class="btn btn-primary mt-3" type="submit">ELKÜLD</button><button class="btn btn-primary mt-3" id="tovabb" type="submit">Tovább</button>
+                        <script>
+                            document.getElementById("tovabb").onclick = function() {
+                                location.href = "./uj_rendezveny.html";
+                            };
+                        </script>
                     </form>
+                    <div class="gombok">
+                        <button id="ujHelyszinLink" class="btn_uj_eloado btn-primary mt-3">Új helyszín</button>
+                        <script>
+                            document.getElementById("ujHelyszinLink").onclick = function() {
+                                location.href = "./uj_helyszin.html";
+                            };
+                        </script>
+                        <button id="kezdolapraLink" class="btn_uj_eloado btn-primary mt-3">Új rendezvény</button>
+                        <script>
+                            document.getElementById("kezdolapraLink").onclick = function() {
+                                location.href = "./uj_rendezveny.html";
+                            };
+                        </script>
+                        <button id="ujEsemenyLink" class="btn_uj_eloado btn-primary mt-3">Új esemény</button>
+                        <script>
+                            document.getElementById("ujEsemenyLink").onclick = function() {
+                                location.href = "./uj_esemeny.html";
+                            };
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>

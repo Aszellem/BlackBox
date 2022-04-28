@@ -40,26 +40,6 @@
         <div class="container">
             <h1>Esemény létrehozása</h1>
             <h2>előadók hozzáadása a rendezvényhez</h2>
-            <div class="gombok">
-                <button id="ujHelyszinLink" class="btn_uj_helyszin btn-primary mt-3">HELYSZÍN HOZZÁADÁSA AZ ADATBÁZISHOZ</button>
-                <script type="text/javascript">
-                    document.getElementById("ujHelyszinLink").onclick = function() {
-                        location.href = "./uj_helyszin.html";
-                    };
-                </script>
-                <button id="ujEloadoLink" class="btn_uj_eloado btn-primary mt-3" href="uj_eloado.html">ELŐADÓ HOZZÁADÁSA AZ ADATBÁZISHOZ</button>
-                <script type="text/javascript">
-                    document.getElementById("ujEloadoLink").onclick = function() {
-                        location.href = "./uj_eloado.html";
-                    };
-                </script>
-                <button id="kezdolapraLink" class="btn_uj_eloado btn-primary mt-3" href="../client/menu-bar.html">MÁSIK RENDEZVÉNY LÉTREHOZÁSA</button>
-                <script type="text/javascript">
-                    document.getElementById("kezdolapraLink").onclick = function() {
-                        location.href = "./uj_rendezveny.html";
-                    };
-                </script>
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     <form method="POST" onsubmit="submitEsemeny()">
@@ -76,15 +56,38 @@
                         <br>
                         <button class="btn btn-primary mt-3" id="kovEloadoButton" type="submit" name="kovEloadoButton">KÖVETKEZŐ ELŐADÓ<br>(Az rendezvényt újra ki kell választani)</button>
                     </form>
-                    <p id="rendKeszSzoveg"><br>Ha kész vagy az előadók hozzáadásával,<br>nyomd meg a Kezdőlap gombot,<br>és a rendezvény már hozzá is van adva a listához!</p>
+                    <div class="gombok">
+                        <button id="ujHelyszinLink" class="btn_uj_helyszin btn-primary mt-3">Új helyszín</button>
+                        <script>
+                            document.getElementById("ujHelyszinLink").onclick = function() {
+                                location.href = "./uj_helyszin.html";
+                            };
+                        </script>
+                        <button id="ujEloadoLink" class="btn_uj_eloado btn-primary mt-3">Új előadó</button>
+                        <script>
+                            document.getElementById("ujEloadoLink").onclick = function() {
+                                location.href = "./uj_eloado.html";
+                            };
+                        </script>
+                        <button id="kezdolapraLink" class="btn_uj_eloado btn-primary mt-3">Új rendezvény</button>
+                        <script>
+                            document.getElementById("kezdolapraLink").onclick = function() {
+                                location.href = "./uj_rendezveny.html";
+                            };
+                        </script>
+                        <button id="keszLink" class="btn_uj_eloado btn-primary mt-3">Kilépés a feltöltésből</button>
+                        <script>
+                            document.getElementById("keszLink").onclick = function() {
+                                location.href = "../client/menu-bar.html";
+                            };
+                        </script>
+                    </div>
                 </div>
-            </div>
-        </div>
-        <footer>
-            Készítették: Czégel Vanessza - Durmancs-Tóth Bendegúz - Bassa Kristóf ©
-        </footer>
-        <!--JS-->
-        <script src="../client/menu-bar.js"></script>
+                <footer>
+                    Készítették: Czégel Vanessza - Durmancs-Tóth Bendegúz - Bassa Kristóf ©
+                </footer>
+                <!--JS-->
+                <script src="../client/menu-bar.js"></script>
     </body>
 
 </html>

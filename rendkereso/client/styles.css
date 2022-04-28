@@ -134,6 +134,12 @@ input:after {
     background: transparent;
 }
 
+#keresoInput {
+    color: darkgrey;
+    border-color: darkgrey;
+    border-radius: 10px;
+}
+
 #rendNev {
     font-size: 1.5rem;
 }
