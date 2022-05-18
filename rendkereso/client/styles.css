@@ -23,7 +23,8 @@ footer {
     font-size: 1rem;
     height: 20px;
     width: 100%;
-    padding-top: 50px;
+    margin-top: auto;
+    padding-top: 60px;
 }
 
 h2 {
@@ -45,7 +46,7 @@ label {
 }
 
 .bovebbDiv {
-    width: 60%;
+    max-width: 80%;
     vertical-align: center;
     background-color: transparent;
     border-radius: 30px;
@@ -134,12 +135,6 @@ input:after {
     background: transparent;
 }
 
-#keresoInput {
-    color: darkgrey;
-    border-color: darkgrey;
-    border-radius: 10px;
-}
-
 #rendNev {
     font-size: 1.5rem;
 }
@@ -165,7 +160,8 @@ input:after {
 }
 
 .password_input {
-    width: 500px;
+    margin-top: 20px;
+    max-width: 100%;
     height: 50px;
     max-width: 100%;
     border-radius: 5px;
@@ -216,7 +212,6 @@ input:after {
 }
 
 .dropdown-item {
-    flex-direction: row;
     color: white;
     text-align: center;
 }
@@ -231,8 +226,8 @@ input:after {
     color: white;
     border-color: #FFFFFF;
     border-radius: 20px;
-    width: 600px;
-    height: 120px;
+    width: 250px;
+    height: 250px;
 }
 
 

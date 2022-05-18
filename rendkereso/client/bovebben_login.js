@@ -21,7 +21,7 @@ function bovebben() {
             .then(json => {
                 console.log(json[0]),
                     json.forEach(f => {
-                        fellepok.innerHTML += f.eloado_nev + "<br><br>";
+                        fellepok.innerHTML += "<h1  style='color: lightblue'>" + f.eloado_nev + "</h2>Fellépő BIO: " + f.eBio + "<br><br>";
                     });
                 lista.innerHTML = "";
                 lista.innerHTML +=

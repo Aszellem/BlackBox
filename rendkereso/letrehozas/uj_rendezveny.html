@@ -61,15 +61,14 @@
                     <label>Belépő:</label>
                     <input type="number" class="form-control" id="ar" required>
                     <br>
-                    <button class="btn btn-primary mt-3" type="submit">ELKÜLD</button>
-                </form>
-                <div class="gombok">
-                    <button class="btn btn-primary mt-3" type="submit" id="tovabb">Tovabb</button>
+                    <button class="btn btn-primary mt-3" type="submit">ELKÜLD</button> <button class="btn btn-primary mt-3" type="submit" id="tovabb">Tovabb</button>
                     <script>
                         document.getElementById("tovabb").onclick = function() {
                             location.href = "./uj_esemeny.html";
                         };
                     </script>
+                </form>
+                <div class="gombok">
                     <button id="ujHelyszinLink" class="btn_uj_eloado btn-primary mt-3">Új helyszín</button>
                     <script>
                         document.getElementById("ujHelyszinLink").onclick = function() {

@@ -37,17 +37,20 @@
                     <li class="nav-item">
                         <a class="nav-link" id="datumRendez" aria-current="page" onclick="kezdolap()">Rendezés dátum szerint</a>
                     </li>
-                    <li class="nav-item dropdown" data-display="static" id="dropdownMenu">
+                    <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa fa-bars"></i> Log In
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <form class="dropdown-item container my-3" id="bejelentkezes" action="localhost:3000/admin" method="post">
-                                <label class="dropdown-item">Adminisztrátor jelszó:</label>
-                                <input class="password_input" type="password" name="password" id="password">
-                                <button class="dropdown-item btn-outline-primary my-3" type="button" id="login">Bejelentkezés</button>
-                                <p id="uzenet2" class="text-danger dropdown-item">&nbsp;</p>
-                            </form>
+                            <li>
+                                <form class="container my-3" id="bejelentkezes" action="localhost:3000/admin" method="post">
+                                    <label>Adminisztrátor jelszó:
+                                        <input class="password_input" type="password" name="password" id="password">
+                                    </label>
+                                    <button class="button btn-outline-primary my-3" type="button" id="login">Bejelentkezés</button>
+                                    <p id="uzenet2" class="text-danger">&nbsp;</p>
+                                </form>
+                            </li>
                         </ul>
                     </li>
                 </ul>

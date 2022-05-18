@@ -14,7 +14,8 @@ function bejelentkezve() {
                     "<p id='rendNev'>" + f.rend_nev + "</p>" +
                     "<p>" + f.idopont + "</p>" +
                     "<p>Helyszín:<br><br>" + f.helyszin_nev + "</p>" +
-                    "<a href='bovebben_login.html?id=" + id + "'><button type='button' class='button' id='button" + id + "' onClick='bovebben(" + id + ")' style='vertical-align:middle'>Részletes infók</button></a>" +
+                    "<a href='bovebben_login.html?id=" + id + "'><button type='button' class='button' id='button" + id + "' onClick='bovebben(" + id + ")' style='vertical-align:middle'>Részletes infók</button>" +
+                    "</a>" +
                     "</div>";
             })
         })
