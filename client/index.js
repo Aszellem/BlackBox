@@ -57,33 +57,36 @@ function kezdolap() {
 function kereses() {
     const url = 'http://localhost:3000/kezdolap';
     const lista = document.getElementById("rendezvenyek");
-    let val = document.getElementById('kereso').value;
+    let val = document.getElementById('keresoInput').value;
     let kisval = val.toLowerCase();
-
-    fetch(url)
-        .then((response) => response.json())
-        .then(json => {
-            lista.innerHTML = "";
-            json.forEach(f => {
-                let eloado = f.eloado_nev;
-                kiseloado = eloado.toLowerCase();
-                let rend = f.rend_nev;
-                kisrend = rend.toLowerCase();
-                if (kisval.length > 0) {
-                    if (kisrend.includes(kisval) || kiseloado.includes(kisval)) {
-                        lista.innerHTML +=
-                            "<div class='card h-150 col-lg-3' id='" + id + "'>" +
-                            "<p id='rendNev'>" + f.rend_nev + "</p>" +
-                            "<p>" + f.idopont + "</p>" +
-                            "<p>Házigazda: " + f.eloado_nev + "</p>" +
-                            "<p>" + f.helyszin_nev + "</p>" +
-                            "<a href='bovebben.html?id=" + id + "'><button type='button' class='button' id='button" + id + "' onClick='bovebben(" + id + ")' style='vertical-align:middle'>Részletes infók</button></a>" +
-                            "</div>";
+    if (val != "") {
+        fetch(url)
+            .then((response) => response.json())
+            .then(json => {
+                lista.innerHTML = "";
+                json.forEach(f => {
+                    let eloado = f.eloado_nev;
+                    kiseloado = eloado.toLowerCase();
+                    let rend = f.rend_nev;
+                    kisrend = rend.toLowerCase();
+                    if (kisval.length > 0) {
+                        if (kisrend.includes(kisval) || kiseloado.includes(kisval)) {
+                            lista.innerHTML +=
+                                "<div class='card h-150 col-lg-3' id='" + id + "'>" +
+                                "<p id='rendNev'>" + f.rend_nev + "</p>" +
+                                "<p>" + f.idopont + "</p>" +
+                                "<p>Házigazda: " + f.eloado_nev + "</p>" +
+                                "<p>" + f.helyszin_nev + "</p>" +
+                                "<a href='bovebben.html?id=" + id + "'><button type='button' class='button' id='button" + id + "' onClick='bovebben(" + id + ")' style='vertical-align:middle'>Részletes infók</button></a>" +
+                                "</div>";
+                        }
                     }
-                }
+                })
             })
-        })
-        .catch(err => console.log(err));
+            .catch(err => console.log(err));
+    } else {
+        kezdolap()
+    }
 }
 
 function nevSzerint() {

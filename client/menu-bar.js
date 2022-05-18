@@ -14,7 +14,8 @@ function bejelentkezve() {
                     "<p id='rendNev'>" + f.rend_nev + "</p>" +
                     "<p>" + f.idopont + "</p>" +
                     "<p>Helyszín:<br><br>" + f.helyszin_nev + "</p>" +
-                    "<a href='bovebben_login.html?id=" + id + "'><button type='button' class='button' id='button" + id + "' onClick='bovebben(" + id + ")' style='vertical-align:middle'>Részletes infók</button></a>" +
+                    "<a href='bovebben_login.html?id=" + id + "'><button type='button' class='button' id='button" + id + "' onClick='bovebben(" + id + ")' style='vertical-align:middle'>Részletes infók</button>" +
+                    "</a>" +
                     "</div>";
             })
         })
@@ -31,33 +32,37 @@ function kijelentkezes() {
 function kereses() {
     const url = "http://localhost:3000/kezdolap";
     const lista = document.getElementById("rendezvenyek2");
-    let val = document.getElementById("kereso").value;
+    let val = document.getElementById("keresoInput").value;
     let kisval = val.toLowerCase();
 
-    fetch(url)
-        .then((response) => response.json())
-        .then((json) => {
-            lista.innerHTML = "";
-            json.forEach((f) => {
-                let eloado = f.eloado_nev;
-                kiseloado = eloado.toLowerCase();
-                let rend = f.rend_nev;
-                kisrend = rend.toLowerCase();
-                if (kisval.length > 0) {
-                    if (kisrend.includes(kisval) || kiseloado.includes(kisval)) {
-                        lista.innerHTML +=
-                            "<div class='card h-150 col-lg-3' id='" + id + "'>" +
-                            "<p id='rendNev'>" + f.rend_nev + "</p>" +
-                            "<p>" + f.idopont + "</p>" +
-                            "<p>Házigazda: " + f.eloado_nev + "</p>" +
-                            "<p>" + f.helyszin_nev + "</p>" +
-                            "<a href='bovebben_login.html?id=" + id + "'><button type='button' class='button' id='button" + id + "' onClick='bovebben(" + id + ")' style='vertical-align:middle'>Részletes infók</button></a>" +
-                            "</div>";
+    if (val != "") {
+        fetch(url)
+            .then((response) => response.json())
+            .then((json) => {
+                lista.innerHTML = "";
+                json.forEach((f) => {
+                    let eloado = f.eloado_nev;
+                    kiseloado = eloado.toLowerCase();
+                    let rend = f.rend_nev;
+                    kisrend = rend.toLowerCase();
+                    if (kisval.length > 0) {
+                        if (kisrend.includes(kisval) || kiseloado.includes(kisval)) {
+                            lista.innerHTML +=
+                                "<div class='card h-150 col-lg-3' id='" + id + "'>" +
+                                "<p id='rendNev'>" + f.rend_nev + "</p>" +
+                                "<p>" + f.idopont + "</p>" +
+                                "<p>Házigazda: " + f.eloado_nev + "</p>" +
+                                "<p>" + f.helyszin_nev + "</p>" +
+                                "<a href='bovebben_login.html?id=" + id + "'><button type='button' class='button' id='button" + id + "' onClick='bovebben(" + id + ")' style='vertical-align:middle'>Részletes infók</button></a>" +
+                                "</div>";
+                        }
                     }
-                }
-            });
-        })
-        .catch((err) => console.log(err));
+                });
+            })
+            .catch((err) => console.log(err));
+    } else {
+        bejelentkezve()
+    }
 }
 
 function nevSzerint() {
@@ -114,7 +119,7 @@ function submitEloado() {
     const eloado = document.getElementById("eloado").value;
     const bio = document.getElementById("bio").value;
     const url = 'http://localhost:3000/submitEloado';
-    if (document.getElementById("eloado") != "") {
+    if (eloado != "" && bio != "") {
         fetch(url, {
                 method: 'POST',
                 headers: {
@@ -156,14 +161,13 @@ function submitRendezveny() {
                 'Content-type': 'application/json;charset=utf-8'
             },
             body: JSON.stringify({
-                "rend_id": rendDarab + 1,
                 "helyszin_id": helyszinValue,
                 "rend_nev": rendezveny,
                 "idopont": datum,
                 "kategoria": kategoria,
                 "korosztaly": korosztaly,
                 "leiras": es_leiras,
-                "ar": ar,
+                "ar": ar
             })
         })
         .then(json => console.log(json))
@@ -289,6 +293,8 @@ function helyszinSzur() {
         .catch(err => console.log(err));
 }
 
+let rendDarab;
+
 function rendezvenyBetolt() {
     const url = 'http://localhost:3000/rendezvenyek';
     const rendezvenyek = document.getElementById("rendezvenyLista");
@@ -304,6 +310,7 @@ function rendezvenyBetolt() {
             })
         })
         .catch(err => console.log(err));
+    return rendDarab;
 }
 
 function rendezvenySzur() {

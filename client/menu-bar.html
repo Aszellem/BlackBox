@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="styles.css" />
     <!--Search gomb-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>BlackBox</title>
+    <title>Fiesta</title>
 </head>
 
 <body>
@@ -44,11 +44,20 @@
                         <button class="nav-link dropdown-item" onclick="kijelentkezes()" id="kijelentkezes">Kijelentkezés</button>
                     </li>
                 </ul>
-                <form class="d-flex">
-                    <input class="form-control" type="text" name="kereso" id="kereso" placeholder="Keresés" />
-                    <button class="button_keres" type="button" onclick="kereses()"><i class="fa fa-search"></button>
+                <div class="d-flex" id="keresoNav">
+                    <input type="text" name="keresoInput" id="keresoInput" placeholder="Keresés" on/>
+                    <button class="button_keres" type="button" id="keresoGomb" onclick="kereses()"><i class="fa fa-search"></button>
+                    <script>
+                        var input = document.getElementById("keresoInput");
+                        input.addEventListener("keyup", function(event) {
+                            if (event.keyCode === 13) {
+                                event.preventDefault();
+                                document.getElementById("keresoGomb").click();
+                            }
+                        });
+                    </script>
                     <i class="fa-solid fa-magnifying-glass"></i>
-                </form>
+                </div>
             </div>
         </div>
     </nav>

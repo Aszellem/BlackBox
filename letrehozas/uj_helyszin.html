@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap" rel="stylesheet" />
     <!--CSS-->
     <link rel="stylesheet" href="style_letrehozas.css" />
-    <title>BlackBox</title>
+    <title>Fiesta</title>
 </head>
 
 <body>
@@ -41,21 +41,6 @@
         <div class="container">
             <h1>Esemény létrehozása</h1>
             <h2>Helyszín adatai</h2>
-
-            <div class="gombok">
-                <button id="ujEloadoLink" class="btn_uj_eloado btn-primary mt-3" href="uj_eloado.html">ELŐADÓ HOZZÁADÁSA AZ ADATBÁZISHOZ</button>
-                <script type="text/javascript">
-                    document.getElementById("ujEloadoLink").onclick = function() {
-                        location.href = "./uj_eloado.html";
-                    };
-                </script>
-                <button id="kezdolapraLink" class="btn_uj_eloado btn-primary mt-3" href="../client/menu-bar.html">MÁSIK RENDEZVÉNY LÉTREHOZÁSA</button>
-                <script type="text/javascript">
-                    document.getElementById("kezdolapraLink").onclick = function() {
-                        location.href = "./uj_rendezveny.html";
-                    };
-                </script>
-            </div>
             <div class="row">
                 <div class="col-md-12">
                     <form method="POST" onsubmit="submitHelyszin()" action="./uj_eloado.html">
@@ -70,8 +55,33 @@
                         <label for="weblap">Weblap:</label>
                         <input type="text" class="form-control" name="weblap" id="weblap" placeholder="www.example.com" required>
                         <br>
-                        <button class="btn btn-primary mt-3" type="submit">ELKÜLD</button>
+                        <button class="btn btn-primary mt-3" type="submit">ELKÜLD</button><button class="btn btn-primary mt-3" id="tovabb" type="submit">Tovább</button>
+                        <script>
+                            document.getElementById("tovabb").onclick = function() {
+                                location.href = "./uj_eloado.html";
+                            };
+                        </script>
                     </form>
+                    <div class="gombok">
+                        <button id="ujEloadoLink" class="btn_uj_eloado btn-primary mt-3">Új előadó</button>
+                        <script>
+                            document.getElementById("ujEloadoLink").onclick = function() {
+                                location.href = "./uj_eloado.html";
+                            };
+                        </script>
+                        <button id="kezdolapraLink" class="btn_uj_eloado btn-primary mt-3">Új rendezvény</button>
+                        <script>
+                            document.getElementById("kezdolapraLink").onclick = function() {
+                                location.href = "./uj_rendezveny.html";
+                            };
+                        </script>
+                        <button id="ujEsemenyLink" class="btn_uj_eloado btn-primary mt-3">Új esemény</button>
+                        <script>
+                            document.getElementById("ujEsemenyLink").onclick = function() {
+                                location.href = "./uj_esemeny.html";
+                            };
+                        </script>
+                    </div>
                 </div>
             </div>
         </div>

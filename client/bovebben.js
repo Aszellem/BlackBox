@@ -21,7 +21,7 @@ function bovebben() {
             .then(json => {
                 console.log(json[0]),
                     json.forEach(f => {
-                        fellepok.innerHTML += f.eloado_nev + "<br><br>";
+                        fellepok.innerHTML += "<h1  style='color: lightblue'>" + f.eloado_nev + "</h2>Fellépő BIO: " + f.eBio + "<br><br>";
                     });
                 lista.innerHTML = "";
                 lista.innerHTML +=
@@ -29,9 +29,9 @@ function bovebben() {
                     "<p>Időpont: " + json[0].idopont + "</p>" +
                     "<p>Helyszín: " + json[0].helyszin_nev + "</p>" +
                     "<p>Helyszín e-mail: " + json[0].email + "</p>" +
-                    "<p>Helyszín weblap: <a href='" + json[0].weblap + "'>" + json[0].weblap + "<a></p>" +
+                    "<p>Helyszín weblap: <a href='" + json[0].weblap + "' target='_blank' rel='noopener noreferrer'>" + json[0].weblap + "<a></p>" +
                     "<p>Kategória: " + json[0].kategoria + "</p>" +
-                    "<p id='leiras'>Esemény leírása: " + json[0].leiras + "</p>" +
+                    "<p id='leiras'>Esemény leírása: " + json[0].esLeiras + "</p>" +
                     "<p>Ár: " + json[0].ar + "</p>";
             })
             .catch((err) => console.log(err));

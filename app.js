@@ -83,7 +83,7 @@ app.route("/kezdolap").get(function(req, res) {
 
 app.route("/bovebben/:id").get(function(req, res) {
     const q =
-        "SELECT r.rend_id, r.rend_nev, date_format(r.idopont, '%Y %M %d') AS 'idopont', r.kategoria, r.korosztaly, r.leiras, r.ar, h.helyszin_nev, h.email, h.weblap, e.eloado_nev " +
+        "SELECT r.rend_id, r.rend_nev, date_format(r.idopont, '%Y %M %d') AS 'idopont', r.kategoria, r.korosztaly, r.leiras as esLeiras, r.ar, h.helyszin_nev, h.email, h.weblap, e.eloado_nev, e.bio as eBio " +
         " FROM helyszin AS h JOIN" +
         " rendezveny AS r" +
         " ON h.helyszin_id = r.helyszin_id JOIN" +

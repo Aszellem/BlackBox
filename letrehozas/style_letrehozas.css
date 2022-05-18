@@ -129,12 +129,13 @@ label {
 
 .btn_uj_helyszin,
 .btn_uj_eloado {
-    margin-left: 10px;
+    margin-left: 0px;
+    padding-left: 10px;
     text-align: center;
     justify-content: center;
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 200px;
     height: 50px;
     background-color: #38b6ff;
     border: 0;
